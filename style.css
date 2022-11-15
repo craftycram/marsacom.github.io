@@ -1,0 +1,12 @@
+#tweets {
+    -moz-column-count:    3; // 3 columns for our wall
+    -webkit-column-count: 3;
+    column-count:         3;
+}
+#tweets div {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: inline-block; 
+    background-color: orange;
+}
