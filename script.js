@@ -21,7 +21,7 @@ twttr.ready(
             '[tweetID]',
             document.getElementById('tweet1'),
             {
-                theme: 'light', //or dark
+                theme: 'dark', 
                 conversation: 'none',
                 dnt: true,
             }
