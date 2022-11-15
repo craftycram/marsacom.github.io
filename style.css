@@ -1,12 +1,13 @@
 #tweets {
-    -moz-column-count:    3;
-    -webkit-column-count: 3;
-    column-count:         3;
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    column-count:         1;
 }
 #tweets div {
     width: 100%;
     padding: 0;
     margin: 0 0 1rem 0;
-    display: inline-block; 
-    background-color: black;
+    display: inline-block;
+    align: center; 
+    background-color: transparent;
 }
