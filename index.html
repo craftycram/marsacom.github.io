@@ -30,7 +30,6 @@
         <script>
             twttr.ready(
                 function (twttr) {
-                    setInterval(() => {
                         fetch('http://localhost:3000/')
                             .then((response) => response.json())
                             .then((data) => {
@@ -45,7 +44,6 @@
                                 ).then( function( el ) {
                                     console.log('Tweet added.');
                             });
-                        }, 30000);
                     })
                 }
             );
