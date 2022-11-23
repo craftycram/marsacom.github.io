@@ -28,25 +28,26 @@
             <div id="tweet1" style="height:600px" align="center"></div>
         </section>
         <script>
-            twttr.ready(
-                function (twttr) {
-                        fetch('http://localhost:3000/')
-                            .then((response) => response.json())
-                            .then((data) => {
-                                twttr.widgets.createTweet(
-                                    data.id,
-                                    document.getElementById('tweet1'),
-                                    {
-                                        theme: 'dark', 
-                                        conversation: 'none',
-                                        dnt: true,
-                                    }
-                                ).then( function( el ) {
-                                    console.log('Tweet added.');
-                            });
-                    })
-                }
-            );
+            function getTweet () {
+              fetch('http://localhost:3000/')
+                .then((response) => response.json())
+                .then((data) => {
+                    twttr.widgets.createTweet(
+                        data.id,
+                        document.getElementById('tweet1'),
+                        {
+                            theme: 'dark', 
+                            conversation: 'none',
+                            dnt: true,
+                        }
+                    ).then( function( el ) {
+                        console.log('Tweet added.');
+                });
+              })
+            }
+
+            twttr.ready(() => getTweet());
+            setInterval(() => getTweet(), 300000);
         </script>
     </body>
 </html>
