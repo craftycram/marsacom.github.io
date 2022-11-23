@@ -30,17 +30,24 @@
         <script>
             twttr.ready(
                 function (twttr) {
-                    twttr.widgets.createTweet(
-                        '1592202172749742080',
-                        document.getElementById('tweet1'),
-                        {
-                            theme: 'dark', 
-                            conversation: 'none',
-                            dnt: true,
-                        }
-                    ).then( function( el ) {
-                        console.log('Tweet added.');
-                });
+                    setInterval(() => {
+                        fetch('http://localhost:3000/')
+                            .then((response) => response.json())
+                            .then((data) => {
+                                twttr.widgets.createTweet(
+                                    data.id,
+                                    document.getElementById('tweet1'),
+                                    {
+                                        theme: 'dark', 
+                                        conversation: 'none',
+                                        dnt: true,
+                                    }
+                                ).then( function( el ) {
+                                    console.log('Tweet added.');
+                            });
+                        }, 30000);
+                    })
+                }
             });
         </script>
     </body>
